@@ -1,6 +1,6 @@
 env:
    global:
-     - CONAN_REFERENCE: "exprtk/1.0.0"
+     - CONAN_REFERENCE: "exprtk/20181117"
      - CONAN_USERNAME: "khm"
      - CONAN_LOGIN_USERNAME: "kylemacfarlan"
      - CONAN_CHANNEL: "stable"
