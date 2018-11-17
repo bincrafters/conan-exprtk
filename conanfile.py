@@ -7,7 +7,7 @@ import os
 
 class ExprtkConan(ConanFile):
     name = "exprtk"
-    version = "1.0.0"
+    version = "20181117"
     url = "https://github.com/kylemacfarlan/conan-exprtk"
     author = "Kyle Macfarlan <kyle.macfarlan@gmail.com>"
     description = "ExprTk is a simple to use, easy to integrate and extremely efficient run-time mathematical expression parser and evaluation engine"
