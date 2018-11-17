@@ -10,3 +10,6 @@ file(GLOB SOURCE_FILES *.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+if (MSVC)
+    target_compile_options(${PROJECT_NAME} /bigobj)
+endif(MSVC)
