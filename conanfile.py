@@ -24,7 +24,7 @@ class ExprtkConan(ConanFile):
         os.rename("exprtk", self._source_subfolder)
 
     def package(self):
-        self.copy(pattern="LICENSE", dst="license", src=self._source_subfolder)
+        self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
         self.copy(pattern="exprtk.hpp", dst="include", src=self._source_subfolder)
 
     def package_id(self):
