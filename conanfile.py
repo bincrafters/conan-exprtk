@@ -10,7 +10,9 @@ class ExprtkConan(ConanFile):
     version = "20181117"
     url = "https://github.com/kylemacfarlan/conan-exprtk"
     author = "Kyle Macfarlan <kyle.macfarlan@gmail.com>"
+    homepage = "https://github.com/ArashPartow/exprtk"
     description = "ExprTk is a simple to use, easy to integrate and extremely efficient run-time mathematical expression parser and evaluation engine"
+    topics = ("conan", "exprtk", "math-expressions", "parser")
     no_copy_source = True
 
     # Indicates License type of the packaged library
@@ -20,18 +22,18 @@ class ExprtkConan(ConanFile):
     exports = ["LICENSE.md"]
 
     # Custom attributes for Bincrafters recipe conventions
-    source_subfolder = "source_subfolder"
+    _source_subfolder = "source_subfolder"
 
     def source(self):
-        tools.get("http://www.partow.net/downloads/exprtk.zip")
+        tools.get("http://www.partow.net/downloads/exprtk.zip", sha256="3a85058755e6d59912bb67cb1c41d9c5fd57c9ec6867fa6e73dba4a44785fac2")
 
         #Rename to "source_folder" is a convention to simplify later steps
-        os.rename("exprtk", self.source_subfolder)
+        os.rename("exprtk", self._source_subfolder)
 
 
     def package(self):
-        include_folder = self.source_subfolder
-        self.copy(pattern="LICENSE", dst="license", src=self.source_subfolder)
+        include_folder = self._source_subfolder
+        self.copy(pattern="LICENSE", dst="license", src=self._source_subfolder)
         self.copy(pattern="exprtk.hpp", dst="include", src=include_folder)
 
 
