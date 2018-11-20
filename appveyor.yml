@@ -1,13 +1,11 @@
 build: false
 
 environment:
-    PYTHON: "C:\\Python27"
-    PYTHON_VERSION: "2.7.15"
-    PYTHON_ARCH: "32"
+  PYTHON: "C:\\Python37"
 
-    matrix:
-        - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-          CONAN_VISUAL_VERSIONS: 15
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      CONAN_VISUAL_VERSIONS: 15
 
 install:
   - set PATH=%PATH%;%PYTHON%/Scripts/

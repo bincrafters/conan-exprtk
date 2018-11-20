@@ -1,22 +1,20 @@
-env:
-   global:
-     - CONAN_REFERENCE: "exprtk/20181117"
-     - CONAN_USERNAME: "khm"
-     - CONAN_LOGIN_USERNAME: "kylemacfarlan"
-     - CONAN_CHANNEL: "stable"
-     - CONAN_UPLOAD: "https://api.bintray.com/conan/kylemacfarlan/khm-conan"
-    
 linux: &linux
    os: linux
-   sudo: required
+   dist: xenial
    language: python
-   python: "3.6"
+   python: "3.7"
    services:
      - docker
+osx: &osx
+   os: osx
+   language: generic
 matrix:
    include:
       - <<: *linux
-        env: CONAN_CLANG_VERSIONS=5.0 CONAN_DOCKER_IMAGE=conanio/clang50
+        env: CONAN_CLANG_VERSIONS=7.0 CONAN_DOCKER_IMAGE=conanio/clang7
+      - <<: *osx
+        osx_image: xcode10.1
+        env: CONAN_APPLE_CLANG_VERSIONS=10.0
 
 install:
   - chmod +x .ci/install.sh

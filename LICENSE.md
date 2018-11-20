@@ -1,3 +1,4 @@
+Copyright (c) 2018 Bincrafters
 Copyright (c) 2018 Kyle Macfarlan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
