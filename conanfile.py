@@ -16,12 +16,14 @@ class ExprtkConan(ConanFile):
     license = "MIT"
     exports = ["LICENSE.md"]
     no_copy_source = True
-
     _source_subfolder = "source_subfolder"
 
     def source(self):
-        tools.get("http://www.partow.net/downloads/exprtk.zip", sha256="3a85058755e6d59912bb67cb1c41d9c5fd57c9ec6867fa6e73dba4a44785fac2")
-        os.rename("exprtk", self._source_subfolder)
+        download_url = "https://github.com/ArashPartow/exprtk"
+        commit_id = "b3b4cee1c52baf935d68fe3bb7fb1a0ec6b79694"
+        sha256 = "d52d50c5355bfe6edd9940b495f4bbbaa1bf51ccee9f21a1b08f8f7fdaeb577c"
+        tools.get("{}/archive/{}.zip".format(download_url, commit_id), sha256=sha256)
+        os.rename("{}-{}".format(self.name, commit_id), self._source_subfolder)
 
     def package(self):
         self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
