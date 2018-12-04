@@ -7,7 +7,7 @@ import os
 
 class ExprtkConan(ConanFile):
     name = "exprtk"
-    version = "20181117"
+    version = "20181202"
     description = "ExprTk is a simple to use, easy to integrate and extremely efficient run-time mathematical expression parser and evaluation engine"
     topics = ("conan", "exprtk", "math-expressions", "parser")
     url = "https://github.com/kylemacfarlan/conan-exprtk"
@@ -20,8 +20,8 @@ class ExprtkConan(ConanFile):
 
     def source(self):
         download_url = "https://github.com/ArashPartow/exprtk"
-        commit_id = "b3b4cee1c52baf935d68fe3bb7fb1a0ec6b79694"
-        sha256 = "d52d50c5355bfe6edd9940b495f4bbbaa1bf51ccee9f21a1b08f8f7fdaeb577c"
+        commit_id = "88acc921e28d9e80b0c61663257bd8ff7997bcb8"
+        sha256 = "430829a20b469cb584d75815cee2c693dda2feac6e63c407d17029d5cf5e26e9"
         tools.get("{}/archive/{}.zip".format(download_url, commit_id), sha256=sha256)
         os.rename("{}-{}".format(self.name, commit_id), self._source_subfolder)
 
