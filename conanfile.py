@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-from conans import ConanFile, tools
 import os
+from conans import ConanFile, tools
 
 
 class ExprtkConan(ConanFile):
@@ -25,9 +24,16 @@ class ExprtkConan(ConanFile):
         tools.get("{}/archive/{}.zip".format(download_url, commit_id), sha256=sha256)
         os.rename("{}-{}".format(self.name, commit_id), self._source_subfolder)
 
+    def _extract_license(self, file):
+        file_content = tools.load(file)
+        expect = "MIT                         *"
+        license_contents = file_content[2:file_content.find(expect) + len(expect)]
+        tools.save(os.path.join(self.package_folder, "licenses", "LICENSE"), license_contents)
+
     def package(self):
-        self.copy(pattern="LICENSE", dst="licenses", src=self._source_subfolder)
-        self.copy(pattern="exprtk.hpp", dst="include", src=self._source_subfolder)
+        header_file = "exprtk.hpp"
+        self._extract_license(os.path.join(self.source_folder, self._source_subfolder, header_file))
+        self.copy(pattern=header_file, dst="include", src=self._source_subfolder)
 
     def package_id(self):
         self.info.header_only()
