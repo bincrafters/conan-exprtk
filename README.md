@@ -1,5 +1,5 @@
 [![Download](https://api.bintray.com/packages/bincrafters/public-conan/exprtk%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/exprtk%3Abincrafters/_latestVersion)
-[![Build Status Travis](https://travis-ci.org/bincrafters/conan-exprtk.svg?branch=stable%2F20181117)](https://travis-ci.org/bincrafters/conan-exprtk)
+[![Build Status Travis](https://travis-ci.com/bincrafters/conan-exprtk.svg?branch=stable%2F20181117)](https://travis-ci.com/bincrafters/conan-exprtk)
 [![Build Status AppVeyor](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-exprtk?branch=stable%2F20181117&svg=true)](https://ci.appveyor.com/project/bincrafters/conan-exprtk)
 
 ## Conan package recipe for [*exprtk*](https://github.com/ArashPartow/exprtk)
