@@ -11,7 +11,6 @@ class ExprtkConan(ConanFile):
     homepage = "https://github.com/ArashPartow/exprtk"
     author = "Kyle Macfarlan <kyle.macfarlan@gmail.com>"
     license = "MIT"
-    exports = ["LICENSE.md"]
     no_copy_source = True
     _source_subfolder = "source_subfolder"
 
